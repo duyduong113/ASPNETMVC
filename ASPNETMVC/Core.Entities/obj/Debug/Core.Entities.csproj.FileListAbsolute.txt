@@ -1,0 +1,7 @@
+D:\GIT\ASPNETMVC\ASPNETMVC\Core.Entities\bin\Debug\Core.Entities.dll
+D:\GIT\ASPNETMVC\ASPNETMVC\Core.Entities\bin\Debug\Core.Entities.pdb
+D:\GIT\ASPNETMVC\ASPNETMVC\Core.Entities\bin\Debug\Core.dll
+D:\GIT\ASPNETMVC\ASPNETMVC\Core.Entities\bin\Debug\Core.pdb
+D:\GIT\ASPNETMVC\ASPNETMVC\Core.Entities\obj\Debug\Core.Entities.csprojResolveAssemblyReference.cache
+D:\GIT\ASPNETMVC\ASPNETMVC\Core.Entities\obj\Debug\Core.Entities.dll
+D:\GIT\ASPNETMVC\ASPNETMVC\Core.Entities\obj\Debug\Core.Entities.pdb
