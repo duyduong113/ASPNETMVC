@@ -185,7 +185,7 @@ namespace Core
             return dts;
         }
 
-        public static object getValueProcWithParameter(string NameStoreProcedure, SqlParameter[] param, SqlConnection connect)
+        public object getValueProcWithParameter(string NameStoreProcedure, SqlParameter[] param, SqlConnection connect)
         {
             using (connect)
             {
