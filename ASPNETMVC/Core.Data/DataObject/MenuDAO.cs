@@ -27,10 +27,10 @@ namespace Core.Data.DataObject
             return new SqlHelper(connectionString).ExecuteString("select * from Menu where ParentID = 0 And Status = 1", param) as IEnumerable<Menu>;
         }
 
-        public DataTable getSubMenu(int parentID, string connectionString)
+        public IEnumerable<Menu> getSubMenu(int parentID, string connectionString)
         {
             List<SqlParameter> param = new List<SqlParameter>();
-            return new SqlHelper(connectionString).ExecuteString("select * from Menu where ParentID = " + parentID + " and Status = 1", param);
+            return new SqlHelper(connectionString).ExecuteString("select * from Menu where ParentID = " + parentID + " and Status = 1", param) as IEnumerable<Menu>;
         }
     }
 }
