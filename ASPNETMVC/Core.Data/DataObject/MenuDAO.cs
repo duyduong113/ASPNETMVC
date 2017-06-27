@@ -21,16 +21,16 @@ namespace Core.Data.DataObject
             return new SqlHelper(connectionString).ExecuteString("select * from Menu", param);
         }
 
-        public IEnumerable<Menu> getRootMenu(string connectionString)
+        public DataTable getRootMenu(string connectionString)
         {
             List<SqlParameter> param = new List<SqlParameter>();
-            return new SqlHelper(connectionString).ExecuteString("select * from Menu where ParentID = 0 And Status = 1", param) as IEnumerable<Menu>;
+            return new SqlHelper(connectionString).ExecuteString("select * from Menu where ParentID = 0 And Status = 1", param);
         }
 
-        public IEnumerable<Menu> getSubMenu(int parentID, string connectionString)
+        public DataTable getSubMenu(int parentID, string connectionString)
         {
             List<SqlParameter> param = new List<SqlParameter>();
-            return new SqlHelper(connectionString).ExecuteString("select * from Menu where ParentID = " + parentID + " and Status = 1", param) as IEnumerable<Menu>;
+            return new SqlHelper(connectionString).ExecuteString("select * from Menu where ParentID = " + parentID + " and Status = 1", param);
         }
     }
 }

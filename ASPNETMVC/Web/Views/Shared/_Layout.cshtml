@@ -117,19 +117,20 @@
                                 <ul class="nav navbar-nav">
                                     @using Core.Data.DataObject
                                     @using Core.Entities
-                                    @foreach (var root in new MenuDAO().getRootMenu(System.Configuration.ConfigurationManager.AppSettings["connectionString"]))
+                                    @using System.Data
+                                    @foreach (DataRow root in new MenuDAO().getRootMenu(System.Configuration.ConfigurationManager.AppSettings["connectionString"]).Rows)
                                     {
                                         <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown">
-                                            <a href="@root.Link" target="@root.Target">
-                                                @root.Text
+                                            <a href="@root["Link"]" target="@root["Target"]">
+                                                @root["Text"]
                                                 <span class="arrow"></span>
                                             </a>
                                             <ul class="dropdown-menu pull-left">
-                                                @foreach (var sub in new MenuDAO().getSubMenu(root.ID, System.Configuration.ConfigurationManager.AppSettings["connectionString"]))
+                                                @foreach (DataRow sub in new MenuDAO().getSubMenu(int.Parse(root["ID"].ToString()), System.Configuration.ConfigurationManager.AppSettings["connectionString"]).Rows)
                                                 {
                                                     <li aria-haspopup="true" class="dropdown-submenu ">
-                                                        <a href="@sub.Link" target="@sub.Target" class="nav-link nav-toggle ">
-                                                            <i class="icon-social-dribbble"></i> @sub.Text
+                                                        <a href="@sub["Link"]" target="@sub["Target"]" class="nav-link nav-toggle ">
+                                                            <i class="icon-social-dribbble"></i> @sub["Text"]
                                                             @*<span class="arrow"></span>*@
                                                         </a>
                                                         <ul class="dropdown-menu">
